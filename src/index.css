@@ -1,588 +1,481 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+:root {
+  --green: #087f5b;
+  --dark-green: #056044;
+  --light-green: #eaf7f1;
+  --text: #17202a;
+  --gray: #667085;
+  --white: #ffffff;
+  --border: #d9e2dc;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #f7f9f8;
-  color: #17202a;
+  background: #f7faf8;
+  color: var(--text);
 }
 
-button {
+button,
+input,
+select {
   font-family: inherit;
-  cursor: pointer;
 }
+
+/* ================= HEADER ================= */
 
 .header {
-  height: 80px;
+  height: 78px;
   background: white;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0 7%;
-
-  border-bottom: 1px solid #ddd;
+  padding: 0 45px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-.university-logo {
+.logo-section {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.rv-logo {
-  width: 38px;
-  height: 38px;
-
-  background: #b51e2a;
+.rv-logo,
+.small-logo {
+  width: 48px;
+  height: 48px;
+  background: #e21f26;
   color: white;
-
   border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
 }
 
-.university-logo h3 {
-  color: #075b45;
-  font-size: 15px;
+.logo-section h2 {
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
-.university-logo p {
-  color: #777;
-  font-size: 10px;
-  margin-top: 2px;
+.logo-section p {
+  font-size: 12px;
+  color: var(--green);
+  margin-top: 3px;
 }
 
-.header-buttons {
+.header nav {
   display: flex;
   gap: 10px;
 }
 
-.login-header,
-.register-header {
-  padding: 8px 18px;
-  border-radius: 5px;
-  font-weight: bold;
+.header nav button {
+  border: none;
+  background: transparent;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #333;
 }
 
-.login-header {
-  background: white;
-  color: #075b45;
-  border: 1px solid #075b45;
-}
-
-.register-header {
-  background: #006b50;
-  color: white;
-  border: 1px solid #006b50;
+.header nav button:hover {
+  color: var(--green);
 }
 
 
+/* ================= HERO ================= */
 
 .hero {
-  min-height: 265px;
-
+  min-height: 440px;
   background: linear-gradient(
-    110deg,
-    #075c45,
-    #003d2d
+    135deg,
+    #087f5b,
+    #0b9b70
   );
 
   color: white;
-
   display: flex;
-  flex-direction: column;
-
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  text-align: center;
-
-  padding: 50px 20px;
+  padding: 70px 10%;
 }
 
-.course-badge {
-  background: rgba(255, 255, 255, 0.15);
+.hero-content {
+  max-width: 620px;
+}
 
-  padding: 6px 13px;
-
-  border-radius: 4px;
-
-  font-size: 10px;
-
-  margin-bottom: 18px;
+.welcome {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
 .hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content > p:not(.welcome) {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.primary-btn {
+  margin-top: 28px;
+  border: none;
+  background: white;
+  color: var(--green);
+  padding: 13px 25px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.hero-card {
+  width: 280px;
+  min-height: 250px;
+  background: rgba(255,255,255,0.13);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: white;
+  color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-card h2 {
+  margin-bottom: 8px;
+}
+
+.hero-card p {
+  opacity: 0.9;
+}
+
+
+/* ================= PORTAL SECTION ================= */
+
+.portal-section {
+  text-align: center;
+  padding: 65px 8%;
+}
+
+.portal-section h2 {
   font-size: 32px;
   margin-bottom: 10px;
 }
 
-.hero p {
-  font-size: 15px;
-  max-width: 600px;
-  line-height: 1.5;
+.section-text {
+  color: var(--gray);
+  margin-bottom: 40px;
 }
 
-.explore-button {
-  margin-top: 22px;
-
-  border: none;
-
-  background: white;
-  color: #075c45;
-
-  padding: 12px 22px;
-
-  border-radius: 25px;
-
-  font-weight: bold;
-
-  transition: 0.2s;
-}
-
-.explore-button:hover {
-  transform: translateY(-2px);
-}
-
-.explore-button span {
-  margin-left: 8px;
-}
-
-.highlights {
-  background: white;
-
-  text-align: center;
-
-  padding: 42px 20px 35px;
-}
-
-.highlights h2,
-.portal-section h2 {
-  color: #075c45;
-  font-size: 24px;
-}
-
-.section-description {
-  color: #8a8a8a;
-  font-size: 13px;
-  margin-top: 10px;
-}
-.campus-image {
-  width: min(735px, 90%);
-
-  height: 230px;
-
-  margin: 28px auto 0;
-
-  border-radius: 10px;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      180deg,
-      #69725e 0%,
-      #8c8b70 42%,
-      #423c30 43%,
-      #24231e 100%
-    );
-
-  position: relative;
-}
-
-.building-shape {
-  position: absolute;
-
-  width: 90%;
-  height: 75px;
-
-  left: 5%;
-  top: 35px;
-
-  border-radius: 50% 50% 0 0;
-
-  border-top: 20px solid #b3a06f;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #6e6247 0px,
-      #6e6247 25px,
-      #9e8c60 26px,
-      #9e8c60 40px
-    );
-
-  opacity: 0.9;
-}
-.portal-section {
-  background: #f5f7f8;
-  padding: 45px 7%;
-}
-
-.portal-section h2 {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.portal-container {
+.portal-cards {
   display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 20px;
-
-  max-width: 900px;
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
   margin: auto;
 }
 
 .portal-card {
   background: white;
-
-  min-height: 260px;
-
-  padding: 28px 20px 20px;
-
-  border-radius: 9px;
-
-  box-shadow:
-    0 3px 10px rgba(0, 0, 0, 0.06);
-
-  border-top: 4px solid;
+  border: 1px solid #e3e9e5;
+  border-radius: 14px;
+  padding: 32px 25px;
+  text-align: left;
+  transition: 0.3s;
 }
 
-.student-card {
-  border-color: #318b3b;
+.portal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.faculty-card {
-  border-color: #2675ca;
-}
-
-.admin-card {
-  border-color: #7623a3;
-}
-
-.portal-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.portal-card h3 {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
-
-.portal-card ul {
-  list-style: none;
+.card-icon,
+.role-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  background: var(--light-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
   margin-bottom: 20px;
 }
 
-.portal-card li {
-  color: #666;
-  font-size: 11px;
-  margin-bottom: 9px;
+.portal-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
 }
 
-.portal-card li::before {
-  content: "•";
-  margin-right: 5px;
+.portal-card p {
+  color: var(--gray);
+  line-height: 1.6;
+  min-height: 75px;
 }
 
 .portal-card button {
-  width: 100%;
-
-  padding: 10px;
-
   border: none;
-
-  border-radius: 5px;
-
-  color: white;
-
+  background: transparent;
+  color: var(--green);
   font-weight: bold;
-
-  font-size: 12px;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-.student-button {
-  background: #318b3b;
+
+/* ================= ROLE PAGE ================= */
+
+.roles-page {
+  background: #f0f8f4;
+  min-height: 600px;
+  padding: 55px 8%;
 }
 
-.faculty-button {
-  background: #2675ca;
-}
-
-.admin-button {
-  background: #7623a3;
-}
-
-.portal-message {
-  max-width: 900px;
-  margin: 20px auto 0;
-
-  background: white;
-
-  padding: 15px;
-
-  border-radius: 6px;
-
+.roles-container {
+  max-width: 1100px;
+  margin: auto;
   text-align: center;
-
-  color: #075c45;
-
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-.registration-section {
-  min-height: 500px;
 
-  padding: 65px 20px;
+.back-btn {
+  border: none;
+  background: transparent;
+  color: var(--green);
+  font-size: 15px;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 35px;
+}
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.roles-container h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
 
-  background:
-    radial-gradient(
-      circle at 10% 30%,
-      rgba(255, 255, 255, 0.07) 0,
-      rgba(255, 255, 255, 0.07) 100px,
-      transparent 101px
-    ),
-    radial-gradient(
-      circle at 95% 75%,
-      rgba(255, 255, 255, 0.07) 0,
-      rgba(255, 255, 255, 0.07) 100px,
-      transparent 101px
-    ),
-    #004b38;
+.roles-container > p {
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.role-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 15px;
+  border: 1px solid var(--border);
+}
+
+.role-icon {
+  margin: 0 auto 20px;
+}
+
+.role-card h2 {
+  margin-bottom: 12px;
+}
+
+.role-card p {
+  color: var(--gray);
+  line-height: 1.5;
+  min-height: 50px;
+}
+
+.role-card .primary-btn {
+  background: var(--green);
+  color: white;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.outline-btn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 13px;
+  border: 1px solid var(--green);
+  background: white;
+  color: var(--green);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+
+/* ================= REGISTRATION ================= */
+
+.registration-page {
+  background: linear-gradient(
+    135deg,
+    #087f5b,
+    #0c9b71
+  );
+
+  min-height: 750px;
+  padding: 40px 20px 70px;
+}
+
+.registration-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.registration-page .back-btn {
+  color: white;
 }
 
 .registration-card {
-  width: 390px;
-  max-width: 100%;
-
   background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
 
-  padding: 35px 32px;
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.18);
-
+.registration-heading {
   text-align: center;
+  margin-bottom: 30px;
 }
 
-.registration-card h2 {
-  color: #075c45;
-  font-size: 23px;
+.small-logo {
+  margin: 0 auto 15px;
 }
 
-.tagline {
-  color: #e07a2d;
-
-  font-size: 12px;
-
-  margin-top: 5px;
-  margin-bottom: 25px;
-}
-
-.registration-card h3 {
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-.tabs {
-  display: flex;
-
-  margin-bottom: 22px;
-
-  background: #f0f3f7;
-
-  border-radius: 8px;
-
-  overflow: hidden;
-}
-
-.tabs button {
-  width: 50%;
-
-  padding: 11px;
-
-  border: none;
-
-  background: transparent;
-
-  color: #667085;
-
-  font-weight: bold;
-}
-
-.tabs .active-tab {
-  background: white;
-  color: #075c45;
-
-  box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.08);
-}
-.registration-card form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.registration-card input {
-  width: 100%;
-
-  padding: 12px;
-
-  border: 1px solid #d8dde2;
-
-  border-radius: 6px;
-
-  outline: none;
-
-  font-size: 13px;
-}
-
-.registration-card input:focus {
-  border-color: #08765a;
-
-  box-shadow:
-    0 0 0 2px rgba(8, 118, 90, 0.1);
-}
-
-.submit-button {
-  padding: 12px;
-
-  border: none;
-
-  border-radius: 6px;
-
-  background: #006b50;
-
-  color: white;
-
-  font-weight: bold;
-
-  margin-top: 3px;
-}
-
-.submit-button:hover {
-  background: #00543e;
-}
-
-.form-message {
-  margin-top: 15px;
-
-  color: #075c45;
-
-  font-size: 13px;
-
-  font-weight: bold;
-}
-footer {
-  background: #003b2c;
-
-  color: white;
-
-  text-align: center;
-
-  padding: 25px 20px;
-}
-
-footer h3 {
-  color: #f2b233;
-
-  font-size: 16px;
-
+.registration-heading h1 {
+  font-size: 30px;
   margin-bottom: 8px;
 }
 
-footer p {
-  font-size: 11px;
-  margin-bottom: 5px;
+.registration-heading p {
+  color: var(--gray);
 }
 
-footer small {
-  color: #a6c0b8;
-  font-size: 10px;
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cfd8d3;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--green);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background: var(--dark-green);
+}
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #12352c;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer h3 {
+  margin-bottom: 7px;
+}
+
+.footer p {
+  color: #c7d8d2;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 800px) {
 
   .header {
     padding: 0 20px;
   }
 
-  .portal-container {
-    grid-template-columns: 1fr;
-    max-width: 450px;
-  }
-
-  .hero h1 {
-    font-size: 26px;
-  }
-
-  .campus-image {
-    height: 180px;
-  }
-}
-
-
-@media (max-width: 500px) {
-
-  .header {
-    height: auto;
-
-    padding: 15px;
-
-    gap: 15px;
-
-    flex-direction: column;
-  }
-
-  .university-logo {
-    width: 100%;
-  }
-
-  .header-buttons {
-    width: 100%;
-  }
-
-  .login-header,
-  .register-header {
-    flex: 1;
-  }
-
   .hero {
-    padding: 45px 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
   }
 
   .hero h1 {
-    font-size: 23px;
+    font-size: 38px;
   }
 
-  .hero p {
-    font-size: 13px;
+  .portal-cards,
+  .role-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 
   .registration-card {
-    padding: 30px 20px;
+    padding: 25px;
   }
 }
